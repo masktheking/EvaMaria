@@ -1,5 +1,6 @@
 import re
 from os import environ
+from dotenv import load_dotenv
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
@@ -9,6 +10,8 @@ def is_enabled(value, default):
         return False
     else:
         return default
+
+load_dotenv()
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
